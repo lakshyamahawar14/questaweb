@@ -1,24 +1,30 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Footer from './Footer'
 import Header from './Header'
-import Welcome from './Welcome'
-import Start from './Start'
 import Add from './Add'
 import Generate from './Generate'
+import { useRouter } from 'next/router'
+import HeadInfo from './HeadInfo'
 
-export default function Home() {
+const paper = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const router = useRouter()
+  // console.log(router.query.params)
   return (
     <>
       <Head>
         <title>Questa Web</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       </Head>
 
       <Header>
 
       </Header>
+
+      <HeadInfo
+      params={router.query.params}
+      >
+
+      </HeadInfo>
       
       <Add>
 
@@ -31,3 +37,5 @@ export default function Home() {
     </>
   )
 }
+
+export default paper

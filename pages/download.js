@@ -1,12 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Footer from './Footer'
 import Header from './Header'
-import Welcome from './Welcome'
-import Start from './Start'
 import Thanks from './Thanks'
 
-export default function Home() {
+const download = () => {
   return (
     <>
       <Head>
@@ -28,3 +25,5 @@ export default function Home() {
     </>
   )
 }
+
+export default download

@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Footer from './Footer'
 import Header from './Header'
 import UserInfo from './UserInfo'
-import Link from 'next/link'
 
 
 const create = () => {
