@@ -10,7 +10,7 @@ export default function Generate() {
     show.setAttribute("id", "show");
     show.classList.add("Paper")
     const img = document.createElement("img"); 
-    img.src = "/static/logo.png";
+    img.src = "/static/img/logo.PNG";
     img.style.width = '75px';
     var watermark = document.createElement('div');
     watermark.setAttribute("id", "watermark");
