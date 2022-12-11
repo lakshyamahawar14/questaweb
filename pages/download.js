@@ -1,14 +1,13 @@
 import Head from 'next/head'
-import Footer from './Footer'
-import Header from './Header'
-import Thanks from './Thanks'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import Thanks from '../components/Thanks'
 
 const download = () => {
   return (
     <>
       <Head>
-        <title>Questa Web</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title>Thank You For Downloading | Questa</title>
       </Head>
 
       <Header>

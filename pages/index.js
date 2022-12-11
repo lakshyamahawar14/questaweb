@@ -1,15 +1,14 @@
 import Head from 'next/head'
-import Footer from './Footer'
-import Header from './Header'
-import Welcome from './Welcome'
-import Start from './Start'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import Welcome from '../components/Welcome'
+import Start from '../components/Start'
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Questa Web</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <Header>

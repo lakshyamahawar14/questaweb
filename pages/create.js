@@ -1,14 +1,13 @@
 import Head from 'next/head'
-import Header from './Header'
-import UserInfo from './UserInfo'
+import Header from '../components/Header'
+import UserInfo from '../components/UserInfo'
 
 
 const create = () => {
     return (
         <>
             <Head>
-                <title>Create Question Paper</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <title>Fill Details | Questa</title>
             </Head>
 
             <Header>

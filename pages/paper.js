@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Header from './Header'
-import Add from './Add'
-import Generate from './Generate'
+import Header from '../components/Header'
+import Add from '../components/Add'
+import Generate from '../components/Generate'
 import { useRouter } from 'next/router'
-import HeadInfo from './HeadInfo'
+import HeadInfo from '../components/HeadInfo'
 
 const paper = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -12,8 +12,7 @@ const paper = () => {
   return (
     <>
       <Head>
-        <title>Questa Web</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title>Paper Maker | Questa</title>
       </Head>
 
       <Header>
