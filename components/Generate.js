@@ -23,9 +23,8 @@ export default function Generate() {
     for(i; i<elements.length; i++){
       show.innerHTML += elements[i].innerHTML + `<br/><br/>`;
     }
-    
 
-    var delayInMilliseconds = 1500; 
+    var delayInMilliseconds = 2000; 
 
     setTimeout(function() {
       html2pdf().from(show).save();
