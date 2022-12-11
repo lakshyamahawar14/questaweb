@@ -14,8 +14,7 @@ export default function UserInfo() {
     for(i=0; i<list.length; i++){
       if(list[i] === '') return alert('Please fill the form!');
     }
-    // if(isHindi.checked) alert('Hindi is selected');
-    // else alert('English is selected');
+    if(isHindi.checked) return router.push({pathname : '/paperhindi', query : {params : list}});
     return router.push({pathname : '/paper', query : {params : list}});
   }
   return (
@@ -37,8 +36,8 @@ export default function UserInfo() {
                 Proceed
         </button>
         <div className='mt-2'>
-          <input type="checkbox" id="language" name="language" value="Hindi" disabled/>
-          <label for="language" className="px-2">Check this box if Paper is in Hindi (Coming soon)</label>
+          <input type="checkbox" id="language" name="language" value="Hindi"/>
+          <label for="language" className="px-2">Check this box if Paper is in Hindi</label>
         </div>
         </div>
     </div>

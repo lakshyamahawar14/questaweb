@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Thanks from '../components/Thanks'
 
-const download = () => {
+export default function Download(){
   return (
     <>
       <Head>
@@ -24,5 +24,3 @@ const download = () => {
     </>
   )
 }
-
-export default download

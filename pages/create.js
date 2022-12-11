@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import UserInfo from '../components/UserInfo'
 
 
-const create = () => {
+export default function Create(){
     return (
         <>
             <Head>
@@ -20,5 +20,3 @@ const create = () => {
         </>
     );
 };
-
-export default create
