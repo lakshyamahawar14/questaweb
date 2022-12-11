@@ -9,7 +9,8 @@ export default function UserInfo() {
     const classname = document.getElementById('class');
     const subjectname = document.getElementById('subject');
     const isHindi = document.getElementById('language');
-    const list = [name.value, schoolname.value, examname.value, classname.value, subjectname.value];
+    // const list = [name.value, schoolname.value, examname.value, classname.value, subjectname.value];
+    const list = [schoolname.value, examname.value, classname.value, subjectname.value];
     var i;
     for(i=0; i<list.length; i++){
       if(list[i] === '') return alert('Please fill the form!');
@@ -21,8 +22,8 @@ export default function UserInfo() {
     <>
     <div className='flex flex-col justify-center items-center'>
         <p className='text-5xl font-black text-center p-4 select-none leading-normal mt-8'>Enter Your Information</p>
-        <label for="name" className='text-xl text-center select-none leading-normal'>Name: </label>
-        <input type="text" id="name" name="name" className='border-2 border-blue-800 w-3/4 max-w-xl text-center p-2' value='Name: ........................' placeholder="For Student's Name" disabled/>
+        {/* <label for="name" className='text-xl text-center select-none leading-normal'>Name: </label>
+        <input type="text" id="name" name="name" className='border-2 border-blue-800 w-3/4 max-w-xl text-center p-2' value='Name: ........................' placeholder="For Student's Name" disabled/> */}
         <label for="schoolname" className='text-xl text-center select-none leading-normal p-2'>School Name: </label>
         <input type="text" id="schoolname" name="schoolname" className='border-2 border-blue-800 w-3/4 max-w-xl text-center p-2' placeholder="School's Name" required/>
         <label for="examname" className='text-xl text-center select-none leading-normal p-2'>Exam Name: </label>

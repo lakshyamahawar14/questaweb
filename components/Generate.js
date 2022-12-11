@@ -9,10 +9,15 @@ export default function Generate() {
     var show = document.createElement('div');
     show.setAttribute("id", "show");
     show.classList.add("Paper")
-    // var watermark = document.createElement('div');
-    // watermark.setAttribute("id", "watermark");
-    // watermark.innerText = 'made by Questa';
-    // show.innerHTML += watermark.innerHTML;
+    const img = document.createElement("img"); 
+    img.src = "/logo.png";
+    img.style.width = '75px';
+    var watermark = document.createElement('div');
+    watermark.setAttribute("id", "watermark");
+    watermark.appendChild(img);
+    watermark.style.display = 'flex';
+    watermark.style.justifyContent = 'center';
+    show.innerHTML += watermark.innerHTML;
     show.innerHTML += paperheader.innerHTML;
     var i = 0;
     for(i; i<elements.length; i++){
