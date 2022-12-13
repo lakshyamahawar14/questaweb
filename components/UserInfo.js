@@ -41,7 +41,8 @@ export default function UserInfo() {
           name="schoolname"
           className="border-2 border-blue-800 w-3/4 max-w-xl text-center p-2"
           placeholder="School's Name"
-          required
+          spellCheck="false"
+          autoComplete="false"
         />
         <label
           for="examname"
@@ -55,7 +56,8 @@ export default function UserInfo() {
           name="examname"
           className="border-2 border-blue-800 w-3/4 max-w-xl text-center p-2"
           placeholder="e.g. Half Yearly Exam"
-          required
+          spellCheck="false"
+          autoComplete="false"
         />
         <label
           for="class"
@@ -69,7 +71,8 @@ export default function UserInfo() {
           name="class"
           className="border-2 border-blue-800 w-3/4 max-w-xl text-center p-2"
           placeholder="e.g. Class 2"
-          required
+          spellCheck="false"
+          autoComplete="false"
         />
         <label
           for="subject"
@@ -83,7 +86,8 @@ export default function UserInfo() {
           name="subject"
           className="border-2 border-blue-800 w-3/4 max-w-xl text-center p-2"
           placeholder="Enter Subject Name..."
-          required
+          spellCheck="false"
+          autoComplete="false"
         />
         <div className="w-3/4 max-w-xl text-center mt-8 mb-8 flex justify-between">
           <button
