@@ -5,18 +5,23 @@ export default function Question(props) {
   const questionID = `question${numQuestion}`;
   const showQuestionID = `showquestion${numQuestion}`;
 
-  const [numSpaces, setNumSpaces] = useState(4);
-  const spacesID = `space${numQuestion}`
+  const [hindiQuestion, setHindiQuestion] = useState("");
+  const spacesID = `space${numQuestion}`;
 
   const handleClick = () => {
     document.getElementById(showQuestionID).innerText =
-      `Q${numQuestion}) ` +
-      document.getElementById(questionID).value;
+      `Q${numQuestion}) ` + document.getElementById(questionID).value;
     const el = document.getElementById(showQuestionID);
     el.classList.add("pad");
     el.classList.add("abel");
-    setNumSpaces(document.getElementById(spacesID).value);
   };
+
+  async function translate() {}
+
+  const handleChange = () => {
+    setHindiQuestion(document.getElementById(questionID).value);
+  };
+
   return (
     <>
       <div class="flex m-4 justify-between w-full max-w-xl">
@@ -32,6 +37,9 @@ export default function Question(props) {
           name={questionID}
           class="questionHindi border-2 border-blue-800 w-3/4 max-w-xl ml-2 p-2 min-h-sm"
           placeholder="Enter Question..."
+          onMouseDown={translate}
+          onChange={handleChange}
+          value={hindiQuestion}
           required
         ></textarea>
         <button
@@ -42,13 +50,16 @@ export default function Question(props) {
         </button>
       </div>
       <div className="flex m-4 justify-start w-full max-w-xl">
-            <label for="spaces">Number of spaces after Q{numQuestion})</label>
-            <input id={spacesID} name="spaces" className="linespaces border-2 border-blue-800 w-3/4 max-w-xl ml-2 p-2 max-w-[50px] mx-2" defaultValue={4}></input>
-        </div>
-      <div
-        id={showQuestionID}
-        class="showquestions my-4 mx-2"
-      ></div>
+        <label for="spaces">Number of spaces after Q{numQuestion})</label>
+        <input
+          id={spacesID}
+          name="spaces"
+          className="linespaces border-2 border-blue-800 w-3/4 max-w-xl ml-2 p-2 max-w-[50px] mx-2"
+          defaultValue={4}
+          maxLength={2}
+        ></input>
+      </div>
+      <div id={showQuestionID} class="showquestions my-4 mx-2 text-[1rem]"></div>
     </>
   );
 }

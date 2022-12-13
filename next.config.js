@@ -11,6 +11,11 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/paperhindi',
+        destination: '/',
+        permanent: true,
+      },
+      {
         source: '/create',
         destination: '/',
         permanent: true,
