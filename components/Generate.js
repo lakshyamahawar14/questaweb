@@ -21,10 +21,15 @@ export default function Generate() {
     show.innerHTML += paperheader.innerHTML;
     var i = 0;
     for(i; i<elements.length; i++){
-      show.innerHTML += elements[i].innerHTML + `<br/><br/>`;
+      var linepsaces = document.getElementsByClassName('linespaces')[i].value;
+      show.innerHTML += elements[i].innerHTML;
+      var j = 0;
+      for(j; j<linepsaces; j++){
+        show.innerHTML += `</br>`;
+      }
     }
 
-    var delayInMilliseconds = 2000; 
+    const delayInMilliseconds = 2000; 
 
     setTimeout(function() {
       html2pdf().from(show).save();
