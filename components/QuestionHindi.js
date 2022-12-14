@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { useState } from "react";
 
 export default function Question(props) {
@@ -6,27 +7,55 @@ export default function Question(props) {
   const showQuestionID = `showquestion${numQuestion}`;
 
   const [hindiQuestion, setHindiQuestion] = useState("");
+  const [showHindiQuestion, setShowHindiQuestion] = useState("");
   const spacesID = `space${numQuestion}`
 
+  const API_KEY = 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM';
+
   const handleClick = () => {
-    document.getElementById(showQuestionID).innerText =
-      `Q${numQuestion}) ` +
-      document.getElementById(questionID).value;
     const el = document.getElementById(showQuestionID);
     el.classList.add("pad");
     el.classList.add("abel");
+    translate(document.getElementById(questionID).value);
   };
-
-  async function translate(){
-    
-  }
 
   const handleChange = () => {
     setHindiQuestion(document.getElementById(questionID).value);
+    
+  }
+
+  const translate = (engtext) => {
+    let fromLang = 'en';
+    let toLang = 'hi';
+    let text = engtext;
+
+    let url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`;
+    url += '&q=' + encodeURI(text);
+    url += `&source=${fromLang}`;
+    url += `&target=${toLang}`;
+
+
+    fetch(url, { 
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    })
+    .then(res => res.json())
+    .then((response) => {
+      // setHindiQuestion(response.data.translations[0].translatedText)
+      setShowHindiQuestion(`प्रश्न${numQuestion}) ${response.data.translations[0].translatedText}`)
+      console.log("response from google: ", response.data.translations[0].translatedText);
+    })
+    .catch(error => {
+      console.log("There was an error with the translation request: ", error);
+    });
   }
   
   return (
     <>
+      <Script src="/scripts/jsapi.js"></Script>
       <div class="flex m-4 justify-between w-full max-w-xl">
         <label
           for={questionID}
@@ -40,7 +69,6 @@ export default function Question(props) {
           name={questionID}
           class="questionHindi border-2 border-blue-800 w-3/4 max-w-xl ml-2 p-2 min-h-sm"
           placeholder="Enter Question..."
-          onMouseLeave={translate}
           onChange={handleChange}
           value={hindiQuestion}
           required
@@ -48,7 +76,6 @@ export default function Question(props) {
         <button
           class="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 mx-2 rounded-full h-full"
           onClick={handleClick}
-          
         >
           जोड़ें 
         </button>
@@ -59,8 +86,12 @@ export default function Question(props) {
         </div>
       <div
         id={showQuestionID}
-        class="showquestions my-4 mx-2 text-[1rem]"
-      ></div>
+        className="showquestions my-4 mx-2 text-[1rem]"
+      >
+        {
+          showHindiQuestion
+        }
+      </div>
     </>
   );
 }

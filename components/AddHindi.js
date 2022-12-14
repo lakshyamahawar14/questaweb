@@ -20,7 +20,7 @@ export default function Add() {
         referrerpolicy="no-referrer"
       ></Script>
       <p className="text-2xl text-center p-4 select-none leading-normal mt-8">
-      अपने कीबोर्ड की भाषा को हिंग्लिश में सेट करें और अंग्रेजी में टाइप करें। वो अपने आप हिंदी में बदल जाएगा (जैसे vikalp = विकल्प)
+      अंग्रेजी में टाइप करें। {'"'}जोड़ें{'"'} पर क्लिक करते ही वह अपने आप हिंदी में बदल जायेगा । (जैसे vikalp = विकल्प)
       </p>
       <div className="flex justify-center mt-4 mb-12">
         <button

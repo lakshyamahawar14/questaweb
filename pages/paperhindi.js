@@ -4,7 +4,6 @@ import AddHindi from '../components/AddHindi'
 import Generate from '../components/Generate'
 import { useRouter } from 'next/router'
 import HeadInfo from '../components/HeadInfo'
-import Script from 'next/script'
 
 export default function Paper(){
   const router = useRouter();
